@@ -10,6 +10,7 @@ var addSearchBox = function () {
 */
 
 var map;
+var markerArr = [];
 
 function initMap() {
 
@@ -80,6 +81,8 @@ function initMap() {
                 map: map
             });
 
+            markerArr.push(marker);
+
             marker.setIcon(/** @type {google.maps.Icon} */({
                 url: place.icon,
                 size: new google.maps.Size(71, 71),
@@ -117,20 +120,6 @@ function initMap() {
         mid[0] = (lat1 + lat2) / 2;
         mid[1] = (lng1 + lng2) / 2;
 
-        /*
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(mid[0], mid[1]),
-            map: map
-        });
-
-        marker.setIcon(({
-            size: new google.maps.Size(71, 71),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(35, 35)
-        }));
-        marker.setVisible(true);
-*/
         console.log(mid[0]);
         console.log(mid[1]);
 
@@ -141,6 +130,9 @@ function initMap() {
     $("#findButton").click(function(){
         var mid = findMidPoint(locationArray);
         findTims(mid);
+
+        locationArray = [];
+
     });
 
 }

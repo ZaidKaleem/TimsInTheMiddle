@@ -9,12 +9,11 @@
 <body>
     <div class="fluid-container">
         <div class="text-center" id="searchBoxes">
-            <h5>Enter your location</h5>
-            <input id="pointA" class="controls" type="text" placeholder="Enter a location">
-            <h5>Enter your boy's location</h5>
-            <input id="pointB" class="controls" type="text" placeholder="Enter a location">
+            <input id="pointA" class="controls" type="text" placeholder="Enter the first location">
+            <input id="pointB" class="controls" type="text" placeholder="Enter the second location">
             <br><br>
             <button class="btn btn-primary" type="button" id="findButton">Find</button>
+            <A HREF="javascript:history.go(0)"><button class="btn btn-danger" type="button">Clear</button></A>
         </div>
     </div>
 
@@ -24,7 +23,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcWArnjxMljCGAUw1ES5d-z1fh6bth1TQ&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6mg6XSZ0ADgXv4rpioLHPOD10nPYeg9A&libraries=places&callback=initMap" async defer></script>
 
     <!-- Bootstrap below: -->
     <!-- Latest compiled and minified CSS -->
