@@ -8,6 +8,27 @@ var addSearchBox = function () {
 }
 
 */
+var counter = 2;
+var locationArray = [];
+var autoCompleteArray = [];
+
+function addInput(divName){
+  var newdiv = document.createElement('div');
+  newdiv.id = ("d" + counter);
+  newdiv.innerHTML = "<input id='point" + counter + "' class='controls' type='text' placeholder='Enter a location'>";
+  document.getElementById(divName).appendChild(newdiv);
+  counter++;
+  this.initMap();;
+}
+function minusInput(divName){
+    if(2 < counter) {
+        document.getElementById(divName).removeChild(document.getElementById('d' + (counter - 1)));
+        counter--;
+        this.initMap();;
+    } else {
+        alert("Cannot find midpoint of a single location");
+    }
+}
 
 
 function initMap() {
@@ -19,7 +40,6 @@ function initMap() {
         streetViewControl: false,
         scrollwheel: false
     });
-
 
     // HTML5 geolocation.
     if (navigator.geolocation) {
@@ -38,49 +58,30 @@ function initMap() {
         handleLocationError(false, infoWindow, map.getCenter());
     }
 
-
-    var locationArray = [];
-
-    // Getting input from first search box
-    var inputA = (document.getElementById('pointA'));
-    var autocompleteA = new google.maps.places.Autocomplete(inputA);
-    autocompleteA.bindTo('bounds', map);
-
-    // Getting input from second search box
-    var inputB = (document.getElementById('pointB'));
-    var autocompleteB = new google.maps.places.Autocomplete(inputB);
-    autocompleteB.bindTo('bounds', map);
-
-    /* Creating marker
-    var infowindow = new google.maps.InfoWindow();
-    var marker = new google.maps.Marker({
-        map: map,
-        anchorPoint: new google.maps.Point(0, -29)
-    });
-    */
+    for (var i = 0; i < counter; i++) {
+        var input = (document.getElementById('point' + i));
+        var autoComplete = new google.maps.places.Autocomplete(input);
+        autoComplete.bindTo('bounds', map);
+        autoCompleteArray.push(autoComplete);
+    }
 
     var infowindow = new google.maps.InfoWindow();
-    var i;
 
-    autocompleteA.addListener('place_changed', function() {
-        var place = autocompleteA.getPlace();
-        locationArray.push([place.geometry.location.lat(),place.geometry.location.lng()]);
-        console.log(locationArray[0]);
-        console.log(locationArray[0].length);
-        paint(place, locationArray);
-    });
+    for (var a = 0; a < autoCompleteArray.length; a++){
+        
+        var placeObject = autoCompleteArray[a];
+            console.log(placeObject.getPlace());
 
-    autocompleteB.addListener('place_changed', function() {
-        var place = autocompleteB.getPlace();
-        locationArray.push([place.geometry.location.lat(),place.geometry.location.lng()]);
-        console.log(locationArray[1]);
-        console.log(locationArray[1].length);
-        paint(place, locationArray);
-    });
+            placeObject.addListener('place_changed', function() {
+            var place = this.getPlace();
+
+            locationArray.push([place.geometry.location.lat(),place.geometry.location.lng()]);
+            paint (place, locationArray);
+        });
+    }
 
     function paint(place, locationArray){
-        console.log(locationArray.length);
-        for (i = 0; i < locationArray.length; i++){
+        for (var i = 0; i < locationArray.length; i++){
 
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locationArray[i][0], locationArray[i][1]),
@@ -95,7 +96,6 @@ function initMap() {
                 scaledSize: new google.maps.Size(35, 35)
             }));
 
-            // marker.setPosition(place.geometry.location);         // fix this shit
             marker.setVisible(true);
 
             var address = '';
@@ -144,7 +144,6 @@ function initMap() {
     $("#findButton").click(function(){
         findMidPoint(locationArray);
     });
-
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {

@@ -7,31 +7,44 @@
 </head>
 <body>
     <div class="fluid-container">
+
         <div class="text-center" id="searchBoxes">
-            <h5>Enter your location</h5>
-            <input id="pointA" class="controls" type="text" placeholder="Enter a location">
-            <h5>Enter your boy's location</h5>
-            <input id="pointB" class="controls" type="text" placeholder="Enter a location">
-            <br><br>
-            <button class="btn btn-primary" type="button" id="findButton">Find</button>
-        </div>
-    </div>
+            <h4><strong>Enter your location</strong></h4>
 
-    <div id="map"></div>
+            <script src="./app.js" language="Javascript" type="text/javascript"></script>
+            <form method="POST">
+               <div id="dynamicIO">
+                    <input id="point0" class="controls" type="text" placeholder="Enter a location" >
+                    <br>
+                    <input id="point1" class="controls" type="text" placeholder="Enter a location" >
+              </div>
+              <br>
 
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcWArnjxMljCGAUw1ES5d-z1fh6bth1TQ&libraries=places&callback=initMap" async defer></script>
+              <button class="btn btn-primary" type="button" value="Add location" onClick="addInput('dynamicIO');" >+</button>
+              <button class="btn btn-danger" type="button" value="Remove location" onClick="minusInput('dynamicIO');" >-</button>
+              <button class="btn btn-primary" type="button" id="findButton">Find</button>
+            </form>
+          <br>
+          
+      </div>
 
-    <!-- Bootstrap below: -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </div>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <div id="map"></div>
+
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="app.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcWArnjxMljCGAUw1ES5d-z1fh6bth1TQ&libraries=places&callback=initMap" async defer></script>
+
+  <!-- Bootstrap below: -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
 </html>
