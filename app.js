@@ -9,12 +9,13 @@ var addSearchBox = function () {
 
 */
 
+var map;
 
 function initMap() {
 
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -34.397, lng: 150.644},
-        zoom: 8,
+        zoom: 10,
         mapTypeControl: false,
         streetViewControl: false,
         scrollwheel: false
@@ -50,14 +51,6 @@ function initMap() {
     var inputB = (document.getElementById('pointB'));
     var autocompleteB = new google.maps.places.Autocomplete(inputB);
     autocompleteB.bindTo('bounds', map);
-
-    /* Creating marker
-    var infowindow = new google.maps.InfoWindow();
-    var marker = new google.maps.Marker({
-        map: map,
-        anchorPoint: new google.maps.Point(0, -29)
-    });
-    */
 
     var infowindow = new google.maps.InfoWindow();
     var i;
@@ -112,7 +105,6 @@ function initMap() {
         }
     }
 
-
     function findMidPoint(locationArray) {
         var lat1 = locationArray[0][0];
         var lat2 = locationArray[1][0];
@@ -121,31 +113,81 @@ function initMap() {
         var lng2 = locationArray[1][1];
 
         var mid = [];
+
         mid[0] = (lat1 + lat2) / 2;
         mid[1] = (lng1 + lng2) / 2;
 
+        /*
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(mid[0], mid[1]),
             map: map
         });
 
-        marker.setIcon(/** @type {google.maps.Icon} */({
+        marker.setIcon(({
             size: new google.maps.Size(71, 71),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(17, 34),
             scaledSize: new google.maps.Size(35, 35)
         }));
         marker.setVisible(true);
-
+*/
         console.log(mid[0]);
         console.log(mid[1]);
+
+       return mid;
     }
 
+
     $("#findButton").click(function(){
-        findMidPoint(locationArray);
+        var mid = findMidPoint(locationArray);
+        findTims(mid);
     });
 
 }
+
+function findTims(mid) {
+    console.log(mid[0]);
+    console.log(mid[1]);
+    var bounds = new google.maps.LatLng(mid[0],mid[1]);
+    var request = {
+        location: bounds,
+        types: ['cafe'],
+        keyword: 'Tim Horton',
+        rankBy: google.maps.places.RankBy.DISTANCE
+    };
+
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+
+    function callback(results, status) {
+        var lat = results[0].geometry.location.lat();
+        var lng = results[0].geometry.location.lng();
+        console.log(lat);
+        console.log(lng);
+        paintTims(lat, lng);
+
+    }
+
+}
+
+
+function paintTims(lat, lng) {
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, lng),
+        map: map
+    });
+
+    marker.setIcon(({
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(35, 35)
+    }));
+    marker.setVisible(true);
+}
+
+
+
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
