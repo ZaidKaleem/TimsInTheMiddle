@@ -2,6 +2,7 @@
 
 var map;
 var markerArr = [];
+var glat, glng;
 
 function initMap() {
 
@@ -124,7 +125,7 @@ function initMap() {
 
         locationArray = [];
 
-        $('#searchBoxes').append("<a href=\"https://www.google.ca/maps/@" + mid[0] + ","+ mid[1]+","+"15z\" target=\"_blank\"><button class=\"btn btn-success directionButton\" type=\"button\">Directions</button></a>");
+
 
     });
 
@@ -153,11 +154,12 @@ function findTims(mid) {
         }
 
         console.log(results);
-        var lat = results[0].geometry.location.lat();
-        var lng = results[0].geometry.location.lng();
-        console.log("Tim lat = " + lat);
-        console.log("Tim Lng = " + lng);
-        paintTims(lat, lng);
+        glat = results[0].geometry.location.lat();
+        glng = results[0].geometry.location.lng();
+
+        console.log("Tim lat = " + glat);
+        console.log("Tim Lng = " + glng);
+        paintTims(glat, glng);
 
     }
 
@@ -185,7 +187,10 @@ function paintTims(lat, lng) {
 
     var bounds = new google.maps.LatLng(lat,lng);
     map.setCenter(bounds);
+   // $('#searchBoxes').append("<a href=\"http://maps.google.com/?ie=UTF8&hq=&ll="+lat+","+lng+"&z=13\" + target=\"_blank\"><button class=\"btn btn-success directionButton\" type=\"button\">Directions</button></a>");
+    $('#searchBoxes').append("<a href=\"http://maps.google.com/maps?q="+lat+","+lng+"&ll="+lat+0.1+","+lng+0.1+"&z=17\"+ target=\"_blank\"><button class=\"btn btn-success directionButton\" type=\"button\">Directions</button></a>")
 
+    h
 }
 
 
