@@ -1,0 +1,102 @@
+/* Header */
+.large-header {
+	position: relative;
+	width: 100%;
+	background: #333;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}
+
+.demo-1 .large-header {
+	background-image: url('../img/demo-1-bg.jpg');
+}
+
+.main-title {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.h2-title{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+	top: 70%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.h3-title{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+	top: 75%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.form-number{
+	position: absolute;
+	border: 10px;
+	box-shadow: rgb(255,0,0); 
+	margin: 0;
+	top:80%;
+	left: 50%;
+	font-weight: 50;
+	align-self: center;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.normal-button{
+	position: absolute;
+    background-color: #EE2E24; /* REd */
+    border: none;
+    color: white;
+    padding: 15px 60px;
+    top:60%;
+	left: 50%;
+	font-weight: 75;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    -webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.demo-1 .main-title, 
+.demo-3 .main-title {
+	text-transform: uppercase;
+	font-size: 4.2em;
+	letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+	font-weight: 200;
+}
+
+@media only screen and (max-width : 768px) {
+	.demo-1 .main-title, 
+	.demo-3 .main-title,
+	.demo-4 .main-title {
+		font-size: 3em;
+	}
+
+	.demo-2 .main-title {
+		font-size: 4em;
+	}
+}
