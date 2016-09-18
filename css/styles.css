@@ -42,4 +42,9 @@ html, body {
     color: brown;
 }
 
+.directionButton {
+    margin-left: 40px;
+    margin-right: 0px;
+}
+
 

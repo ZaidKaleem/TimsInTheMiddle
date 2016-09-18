@@ -124,6 +124,8 @@ function initMap() {
 
         locationArray = [];
 
+        $('#searchBoxes').append("<a href=\"https://www.google.ca/maps/@" + mid[0] + ","+ mid[1]+","+"15z\" target=\"_blank\"><button class=\"btn btn-success directionButton\" type=\"button\">Directions</button></a>");
+
     });
 
 }
@@ -164,9 +166,6 @@ function findTims(mid) {
 
 function paintTims(lat, lng) {
 
-    var infowindow = new google.maps.InfoWindow();
-    infowindow.setContent('<a href=\'https://www.google.ca/maps/'+'@'+lat+','+lng+'\''+'>Directions</a>');
-    infowindow.open(map, marker);
 
 
     var marker = new google.maps.Marker({
