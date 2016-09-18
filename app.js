@@ -1,13 +1,4 @@
-/*
-var addSearchBox = function () {
 
-
-    var box = "<input>";
-    $('#searchBoxes').append(box);
-
-}
-
-*/
 
 var map;
 var markerArr = [];
@@ -15,7 +6,7 @@ var markerArr = [];
 function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
+        center: {lat: 43.472293, lng: -80.545072},
         zoom: 10,
         mapTypeControl: false,
         streetViewControl: false,
@@ -92,7 +83,7 @@ function initMap() {
             }));
 
             // marker.setPosition(place.geometry.location);         // fix this shit
-            marker.setVisible(true);
+           // marker.setVisible(true);
 
             var address = '';
             if (place.address_components) {
@@ -120,8 +111,8 @@ function initMap() {
         mid[0] = (lat1 + lat2) / 2;
         mid[1] = (lng1 + lng2) / 2;
 
-        console.log(mid[0]);
-        console.log(mid[1]);
+        console.log("Mid lat = " + mid[0]);
+        console.log("Mid Lng = " + mid[1]);
 
        return mid;
     }
@@ -141,10 +132,10 @@ function findTims(mid) {
     console.log(mid[0]);
     console.log(mid[1]);
     var bounds = new google.maps.LatLng(mid[0],mid[1]);
+
     var request = {
         location: bounds,
-        types: ['cafe'],
-        keyword: 'Tim Horton',
+        keyword: ['tim hortons'],
         rankBy: google.maps.places.RankBy.DISTANCE
     };
 
@@ -152,10 +143,18 @@ function findTims(mid) {
     service.nearbySearch(request, callback);
 
     function callback(results, status) {
+
+
+        if (results.length==0){
+            console.log("No shop around!");
+            alert("No Tim Horton shops around!");
+        }
+
+        console.log(results);
         var lat = results[0].geometry.location.lat();
         var lng = results[0].geometry.location.lng();
-        console.log(lat);
-        console.log(lng);
+        console.log("Tim lat = " + lat);
+        console.log("Tim Lng = " + lng);
         paintTims(lat, lng);
 
     }
@@ -164,9 +163,16 @@ function findTims(mid) {
 
 
 function paintTims(lat, lng) {
+
+    var infowindow = new google.maps.InfoWindow();
+    infowindow.setContent('<a href=\'https://www.google.ca/maps/'+'@'+lat+','+lng+'\''+'>Directions</a>');
+    infowindow.open(map, marker);
+
+
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, lng),
-        map: map
+        map: map,
+        icon: 'http://i.imgur.com/L3uPOwE.png'
     });
 
     marker.setIcon(({
@@ -175,9 +181,13 @@ function paintTims(lat, lng) {
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(35, 35)
     }));
-    marker.setVisible(true);
-}
 
+    marker.setVisible(true);
+
+    var bounds = new google.maps.LatLng(lat,lng);
+    map.setCenter(bounds);
+
+}
 
 
 
@@ -187,7 +197,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: The Geolocation service failed.' :
         'Error: Your browser doesn\'t support geolocation.');
 }
-
 
 
 $(document).ready(initMap);
