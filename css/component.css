@@ -10,7 +10,7 @@
 }
 
 .demo-1 .large-header {
-	background-image: url('../img/demo-1-bg.jpg');
+	background-image: url('../img/timBG.jpg');
 }
 
 .main-title {
@@ -64,11 +64,11 @@
 
 .normal-button{
 	position: absolute;
-    background-color: #EE2E24; /* REd */
+	background-color: brown;
     border: none;
     color: white;
     padding: 15px 60px;
-    top:60%;
+    top: 50%;
 	left: 50%;
 	font-weight: 75;
     text-align: center;
@@ -76,6 +76,10 @@
     font-size: 16px;
     -webkit-transform: translate3d(-50%,-50%,0);
 	transform: translate3d(-50%,-50%,0);
+}
+
+.normal-button:hover {
+	background-color: darkred;
 }
 
 .demo-1 .main-title, 
