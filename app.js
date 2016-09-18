@@ -132,6 +132,7 @@ function findTims(mid) {
     console.log(mid[0]);
     console.log(mid[1]);
     var bounds = new google.maps.LatLng(mid[0],mid[1]);
+
     var request = {
         location: bounds,
         keyword: ['tim hortons'],
@@ -190,14 +191,12 @@ function paintTims(lat, lng) {
 
 
 
-
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
         'Error: The Geolocation service failed.' :
         'Error: Your browser doesn\'t support geolocation.');
 }
-
 
 
 $(document).ready(initMap);
