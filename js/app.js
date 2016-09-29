@@ -11,7 +11,7 @@ function initMap() {
         zoom: 10,
         mapTypeControl: false,
         streetViewControl: true,
-        scrollwheel: false
+        scrollwheel: true
     });
 
 
