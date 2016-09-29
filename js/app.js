@@ -1,5 +1,4 @@
 
-
 var map;
 var markerArr = [];
 var glat, glng;
@@ -13,7 +12,6 @@ function initMap() {
         streetViewControl: true,
         scrollwheel: true
     });
-
 
     // HTML5 geolocation.
     if (navigator.geolocation) {
@@ -31,7 +29,6 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
-
 
     var locationArray = [];
 
@@ -124,11 +121,7 @@ function initMap() {
         findTims(mid);
 
         locationArray = [];
-
-
-
     });
-
 }
 
 function findTims(mid) {
@@ -147,7 +140,6 @@ function findTims(mid) {
 
     function callback(results, status) {
 
-
         if (results.length==0){
             console.log("No shop around!");
             alert("No Tim Horton shops around!");
@@ -160,15 +152,10 @@ function findTims(mid) {
         console.log("Tim lat = " + glat);
         console.log("Tim Lng = " + glng);
         paintTims(glat, glng);
-
     }
-
 }
 
-
 function paintTims(lat, lng) {
-
-
 
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, lng),
@@ -189,11 +176,7 @@ function paintTims(lat, lng) {
     map.setCenter(bounds);
    // $('#searchBoxes').append("<a href=\"http://maps.google.com/?ie=UTF8&hq=&ll="+lat+","+lng+"&z=13\" + target=\"_blank\"><button class=\"btn btn-success directionButton\" type=\"button\">Directions</button></a>");
     $('#searchBoxes').append("<a href=\"http://maps.google.com/maps?q="+lat+","+lng+"&ll="+lat+0.1+","+lng+0.1+"&z=17\"+ target=\"_blank\"><button class=\"btn btn-success directionButton\" type=\"button\">Directions</button></a>")
-
-    h
 }
-
-
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
@@ -201,6 +184,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: The Geolocation service failed.' :
         'Error: Your browser doesn\'t support geolocation.');
 }
-
 
 $(document).ready(initMap);

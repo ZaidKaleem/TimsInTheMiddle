@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2220f4cb-1ac9-4360-9330-c471f879250c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
     </list>
@@ -59,9 +58,12 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1475175445000" expanded="true" signature="66:3968" ph="{...}" />
+                <marker date="1475175445000" expanded="true" signature="131:297" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -643,12 +645,12 @@
       <workItem from="1474380925497" duration="5000" />
       <workItem from="1474386133116" duration="553000" />
       <workItem from="1474386729060" duration="101000" />
-      <workItem from="1475173882003" duration="611000" />
+      <workItem from="1475173882003" duration="922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60700000" />
+    <option name="totallyTimeSpent" value="61011000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -742,7 +744,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1475175445000" expanded="true" signature="66:3968" ph="{...}" />
+            <marker date="1475175445000" expanded="true" signature="131:297" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -774,7 +779,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1475175445000" expanded="true" signature="66:3968" ph="{...}" />
+            <marker date="1475175445000" expanded="true" signature="131:297" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -813,7 +821,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1475175445000" expanded="true" signature="66:3968" ph="{...}" />
+            <marker date="1475175445000" expanded="true" signature="131:297" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -852,7 +863,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1475175445000" expanded="true" signature="66:3968" ph="{...}" />
+            <marker date="1475175445000" expanded="true" signature="131:297" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1006,9 +1020,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1475175445000" expanded="true" signature="66:3968" ph="{...}" />
+            <marker date="1475175445000" expanded="true" signature="131:297" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
