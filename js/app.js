@@ -7,7 +7,7 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 43.472293, lng: -80.545072},
-        zoom: 10,
+        zoom: 20,
         mapTypeControl: false,
         streetViewControl: true,
         scrollwheel: true
