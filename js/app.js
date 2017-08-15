@@ -71,7 +71,7 @@ function initMap() {
             });
 
             markerArr.push(marker);
-
+/*
             marker.setIcon(/** @type {google.maps.Icon} */({
                 url: place.icon,
                 size: new google.maps.Size(71, 71),
@@ -79,7 +79,7 @@ function initMap() {
                 anchor: new google.maps.Point(17, 34),
                 scaledSize: new google.maps.Size(35, 35)
             }));
-
+*/
             // marker.setPosition(place.geometry.location);         // fix this shit
            // marker.setVisible(true);
 
