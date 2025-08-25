@@ -80,7 +80,7 @@ function initMap() {
 //                scaledSize: new google.maps.Size(35, 35)
 //            }));
 
-            // marker.setPosition(place.geometry.location);         // fix this shit
+            // marker.setPosition(place.geometry.location);         
            // marker.setVisible(true);
 
             var address = '';
